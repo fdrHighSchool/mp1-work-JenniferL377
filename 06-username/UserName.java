@@ -16,16 +16,15 @@ public class UserName {
     String favnumber = s.nextLine();
     
     // test output
-    if(choice.equals("Student")) {
-        System.out.print(firstName+initialize(lastName)+favnumber+"@nycstudents.net");
+    if(choice.equalsIgnoreCase("Student")) {
+        System.out.print((firstName+initialize(lastName)+favnumber+"@nycstudents.net").toLowerCase());
     }
-    else if (choice.equals("Teacher")) {
-        System.out.print(initialize(firstName)+lastName+favnumber+"@schools.nyc.gov");
+    else if (choice.equalsIgnoreCase("Teacher")) {
+        System.out.print((initialize(firstName)+lastName+favnumber+"@schools.nyc.gov").toLowerCase());
     }
     else {
         System.out.print("Please enter 'Student' or 'Teacher'");
     }
-    
     s.close();
   } // end main method
 
