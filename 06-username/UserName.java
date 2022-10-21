@@ -25,9 +25,43 @@ public class UserName {
     else {
         System.out.print("Please enter 'Student' or 'Teacher'");
     }
+    
+    System.out.println("How long would you like the password to be?");
+    
+    generatePassword(8);
+    
     s.close();
   } // end main method
-
+  
+  /*
+   * Name: generatePassword
+   * Purpose: generate a random password
+   * Input: length of password (int)
+   * Return: the password (String)
+   */
+  public static String generatePassword(int length) {
+      String password = "";
+      //loop 'length' times
+      for(int i = 0; i < length; i++) {
+      //generate a random number
+      //65-90 cap. letters
+      //97-122 lower. letters
+      //33-47 special char.
+      
+      int max = 90;
+      int min = 65;
+      int rand = (int)(Math.random()*(max-min+1)+min);
+      
+      //convert the random int to char, ex: c  =(char)i;
+      char c = (char)rand;
+      
+      //add the char to password
+      password += c; 
+      System.out.println(password);
+    }
+      return password;
+  } //end generatePassword method
+  
   /*
    * Name: initialize
    * Purpose: send back the first character (inital) of a name
@@ -37,5 +71,4 @@ public class UserName {
   public static String initialize(String n) {
     return n.substring(0, 1);
   } // end initialize method
-
-} // end class
+}// end class
